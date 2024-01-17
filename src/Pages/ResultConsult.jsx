@@ -97,7 +97,7 @@ function ResultConsult() {
             setProgressBarValue(100)
             loadingCard.current.style.display = 'none';
             downloadNow.current.style.display = 'block';
-        }, 15000);
+        }, 20000);
     }, [])
 
 

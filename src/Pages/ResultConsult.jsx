@@ -70,28 +70,28 @@ function ResultConsult() {
         }, 1000);
 
         setTimeout(() => {
-            setProgressBarValue(33)
+            setProgressBarValue(22)
         }, 3000);
 
         setTimeout(() => {
-            setProgressBarValue(55)
+            setProgressBarValue(33)
         }, 6000);
 
         setTimeout(() => {
-            setProgressBarValue(66)
+            setProgressBarValue(44)
         }, 7000);
 
         setTimeout(() => {
-            setProgressBarValue(77)
+            setProgressBarValue(55)
         }, 8000);
 
         setTimeout(() => {
-            setProgressBarValue(80)
-        }, 10000);
+            setProgressBarValue(75)
+        }, 15000);
 
         setTimeout(() => {
-            setProgressBarValue(90)
-        }, 13000);
+            setProgressBarValue(85)
+        }, 18000);
 
         setTimeout(() => {
             setProgressBarValue(100)

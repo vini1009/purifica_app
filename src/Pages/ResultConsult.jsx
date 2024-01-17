@@ -112,7 +112,7 @@ function ResultConsult() {
                 <div className='col-md-12 col-sm-12'>
                     <div className="card rounded-17">
                         <div className="card-header text-center">
-                            <h2 className='mb-0'>Aqui está o seu resumo e algumas informações importantes que utilizamos para montar o <b className='text-success'>seu plano</b>!</h2>
+                            <h2 className='mb-0'>Aqui está o resumo com algumas informações importantes que utilizamos para <b className='text-success'>gerar a receita</b>!</h2>
                         </div>
                         <div className="card-body">
                             <div class="row">

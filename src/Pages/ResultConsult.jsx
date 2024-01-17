@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 
 import Logo from '/img/logo_white.png';
-import ProteinsCards from '../Components/proteinsCards';
+import ProteinsCards from '../Components/proteinsCards.jsx';
 
 function ResultConsult() {
 

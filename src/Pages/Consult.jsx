@@ -6,8 +6,8 @@ function Consult() {
 
     const email = (localStorage.getItem('email') || false);
 
-    if(!email){
-        if(localStorage.getItem('email')){
+    if (!email) {
+        if (localStorage.getItem('email')) {
             localStorage.removeItem('email');
         }
         window.location.href = '/';
@@ -19,6 +19,7 @@ function Consult() {
     const [weight, setWeight] = useState(null);
     const [desiredWeight, setDesiredWeight] = useState(null);
     const [genre, setGenre] = useState('male');
+    const [frequency, setFrequency] = useState(0);
 
     const [ageError, setAgeError] = useState(false);
     const [heightError, setHeightError] = useState(false);
@@ -34,9 +35,9 @@ function Consult() {
         }
 
         if (numericValue < 18) {
-            setAgeError({msg: messagesErrors['min_req']});
+            setAgeError({ msg: messagesErrors['min_req'] });
         } else if (numericValue > 100) {
-            setAgeError({msg: messagesErrors['max_req']});
+            setAgeError({ msg: messagesErrors['max_req'] });
         } else {
             setAgeError(false);
         }
@@ -51,10 +52,10 @@ function Consult() {
             ['max_req']: 'A altura deve ser menor ou igual a 210'
         }
 
-        if(numericValue < 140){
-            setHeightError({msg: messagesErrors['min_req']});
+        if (numericValue < 140) {
+            setHeightError({ msg: messagesErrors['min_req'] });
         } else if (numericValue > 210) {
-            setHeightError({msg: messagesErrors['max_req']});
+            setHeightError({ msg: messagesErrors['max_req'] });
         } else {
             setHeightError(false);
         }
@@ -69,15 +70,15 @@ function Consult() {
             ['max_req']: 'O peso deve ser menor ou igual a 150'
         }
 
-        if(numericValue < 40){
-            setWeightError({msg: messagesErrors['min_req']});
-        } else if (numericValue > 150){
-            setWeightError({msg: messagesErrors['max_req']});
+        if (numericValue < 40) {
+            setWeightError({ msg: messagesErrors['min_req'] });
+        } else if (numericValue > 150) {
+            setWeightError({ msg: messagesErrors['max_req'] });
         } else {
             setWeightError(false);
         }
 
-        
+
     }
 
 
@@ -88,17 +89,23 @@ function Consult() {
 
     const handleOnSubmit = () => {
 
-        if(ageError === false && heightError === false && weightError === false){
+        if (ageError === false && heightError === false && weightError === false) {
             localStorage.setItem('data', JSON.stringify({
                 'age': parseInt(age),
                 'height': parseFloat(height),
                 'weight': parseFloat(weight),
                 'desiredWeight': parseFloat(desiredWeight),
-                'genre': genre
+                'genre': genre,
+                'frequency': frequency
             }))
             window.location.href = '/consult/result'
         }
     }
+
+    const handleSelectChange = (event) => {
+        const value = event.target.value;
+        setFrequency(value);
+    };
 
 
     return (
@@ -113,11 +120,11 @@ function Consult() {
                             <h3 className=' mb-2 ml-1 text-center'><b>Complete os dados abaixo para gerar sua receita.</b></h3>
                         </div>
                         <div className="card-body">
-                            { ageError ? (<span className='d-flex align-items-left mb-0 ml-1 text-danger'>{ageError.msg} </span>) : '' }
+                            {ageError ? (<span className='d-flex align-items-left mb-0 ml-1 text-danger'>{ageError.msg} </span>) : ''}
                             <input type="text" className="form-control form-control-lg rounded-14 mb-2 h1" value={age} onChange={handleAgeChange} placeholder="Idade" />
-                            { heightError ? (<span className='d-flex align-items-left mb-0 ml-1 text-danger'>{heightError.msg} </span>) : '' }
+                            {heightError ? (<span className='d-flex align-items-left mb-0 ml-1 text-danger'>{heightError.msg} </span>) : ''}
                             <input type="text" className="form-control form-control-lg rounded-14 mb-2" value={height} onChange={handleHeightChange} placeholder="Altura (em cm)" />
-                            { weightError ? (<span className='d-flex align-items-left mb-0 ml-1 text-danger'>{weightError.msg} </span>) : '' }
+                            {weightError ? (<span className='d-flex align-items-left mb-0 ml-1 text-danger'>{weightError.msg} </span>) : ''}
                             <input type="text" className="form-control form-control-lg rounded-14 mb-2" value={weight} onChange={handleWeightChange} placeholder="Peso (em kg)" />
                             <input type="text" className="form-control form-control-lg rounded-14 mb-2" value={desiredWeight} onChange={handleDesiredWeightChange} placeholder="Peso desejado (em kg)" />
                             <h3 className='mb-1'>Qual é seu sexo?</h3>
@@ -132,7 +139,7 @@ function Consult() {
                                 </label>
                             </div>
                             <h3 className='mb-1 mt-2'>Qual é seu nível de atividade diária? </h3>
-                            <select className="form-control form-control-lg text-center">
+                            <select className="form-control form-control-lg text-center" onChange={handleSelectChange}>
                                 <option value="0" selected="">Nenhuma atividade</option>
                                 <option value="1">Atividade mínima</option>
                                 <option value="2">Atividade moderada</option>

@@ -19,12 +19,21 @@ function ResultConsult() {
     const user_weight = parseFloat(userData.weight);
     const user_age = parseFloat(userData.age);
     const user_desiredWeight = parseFloat(userData.desiredWeight);
+    const user_frequency = parseFloat(userData.frequency);
+
+    const activityLevels = {
+        0: 1.2,     // Nenhuma atividade
+        1: 1.375,       // Atividade mínima
+        2: 1.55,     // Moderada
+        3: 1.725,      // Muito ativo
+        4: 1.9    // Extremamente ativo
+      };
 
     // Cálculo do IMC
     const imc_result = parseFloat(user_weight) / (parseFloat(user_height) * parseFloat(user_height));
 
     // Cálculo das calorias diárias
-    const dailyCalories = userData.genre === 'male' ? (10 * user_desiredWeight + 6.25 * user_height * 100 - 5 * user_age + 5) : (10 * user_desiredWeight + 6.25 * user_height * 100 - 5 * user_age - 161);
+    const dailyCalories = userData.genre === 'male' ? (10 * user_desiredWeight + 6.25 * user_height * 100 - 5 * user_age + 5) * activityLevels[user_frequency] : (10 * user_desiredWeight + 6.25 * user_height * 100 - 5 * user_age - 161) * activityLevels[user_frequency];
 
     // Cálculo da quantidade de água
     const dailyWater = user_weight * 0.035;

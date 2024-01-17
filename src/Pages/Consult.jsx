@@ -110,7 +110,7 @@ function Consult() {
                 <div className='col-md-12 col-sm-12'>
                     <div className="card rounded-17">
                         <div className="card-header text-center">
-                            <h3 className='d-flex align-items-left mb-2 ml-1 text-center'><b>Complete os dados abaixo para gerar sua receita.</b></h3>
+                            <h3 className=' mb-2 ml-1 text-center'><b>Complete os dados abaixo para gerar sua receita.</b></h3>
                         </div>
                         <div className="card-body">
                             { ageError ? (<span className='d-flex align-items-left mb-0 ml-1 text-danger'>{ageError.msg} </span>) : '' }

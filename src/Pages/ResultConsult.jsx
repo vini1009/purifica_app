@@ -61,14 +61,34 @@ function ResultConsult() {
         }, 1000);
 
         setTimeout(() => {
-            setProgressBarValue(55)
+            setProgressBarValue(33)
         }, 3000);
+
+        setTimeout(() => {
+            setProgressBarValue(55)
+        }, 6000);
+
+        setTimeout(() => {
+            setProgressBarValue(66)
+        }, 7000);
+
+        setTimeout(() => {
+            setProgressBarValue(77)
+        }, 8000);
+
+        setTimeout(() => {
+            setProgressBarValue(80)
+        }, 10000);
+
+        setTimeout(() => {
+            setProgressBarValue(90)
+        }, 13000);
 
         setTimeout(() => {
             setProgressBarValue(100)
             loadingCard.current.style.display = 'none';
             downloadNow.current.style.display = 'block';
-        }, 6000);
+        }, 15000);
     }, [])
 
 

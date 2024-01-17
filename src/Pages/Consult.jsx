@@ -110,10 +110,9 @@ function Consult() {
                 <div className='col-md-12 col-sm-12'>
                     <div className="card rounded-17">
                         <div className="card-header text-center">
-                            <h2 className='mb-0'>Seja bem vindo ao <b className='text-success'>Purifica App</b>!</h2>
+                            <h3 className='d-flex align-items-left mb-2 ml-1'><b>Complete os dados abaixo para gerar sua receita.</b></h3>
                         </div>
                         <div className="card-body">
-                            <h3 className='d-flex align-items-left mb-2 ml-1'><b>Complete os dados abaixo para gerar seu programa personalizado.</b></h3>
                             { ageError ? (<span className='d-flex align-items-left mb-0 ml-1 text-danger'>{ageError.msg} </span>) : '' }
                             <input type="text" className="form-control form-control-lg rounded-14 mb-2 h1" value={age} onChange={handleAgeChange} placeholder="Idade" />
                             { heightError ? (<span className='d-flex align-items-left mb-0 ml-1 text-danger'>{heightError.msg} </span>) : '' }

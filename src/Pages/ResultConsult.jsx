@@ -11,7 +11,7 @@ function ResultConsult() {
         if(localStorage.getItem('data')){
             localStorage.removeItem('data');
         }
-        window.location.href = '/';
+        window.location.href = '/app/login';
 
     }
 

@@ -10,7 +10,7 @@ function Consult() {
         if (localStorage.getItem('email')) {
             localStorage.removeItem('email');
         }
-        window.location.href = '/';
+        window.location.href = '/app/login';
     }
 
 
@@ -98,7 +98,7 @@ function Consult() {
                 'genre': genre,
                 'frequency': frequency
             }))
-            window.location.href = '/consult/result'
+            window.location.href = '/app/resultado'
         }
     }
 

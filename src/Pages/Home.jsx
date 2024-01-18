@@ -34,7 +34,7 @@ function Home({ onPageChange }) {
 
         if (isValidEmail) {
             localStorage.setItem('email', email);
-            window.location.href = '/consult';
+            window.location.href = 'app//aplicativo';
         }
     }
 

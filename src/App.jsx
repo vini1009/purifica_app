@@ -27,9 +27,9 @@ function App() {
 
               <BrowserRouter>
                 <Routes>
-                  <Route path='/' element={<Home />}/>
-                  <Route path='/consult' element={<Consult />}/>
-                  <Route path='/consult/result' element={<ResultConsult />}/>
+                  <Route path='/app/login' element={<Home />}/>
+                  <Route path='/app/aplicativo' element={<Consult />}/>
+                  <Route path='/app/resultados' element={<ResultConsult />}/>
                 </Routes>
               </BrowserRouter>
             </div>

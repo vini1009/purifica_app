@@ -98,7 +98,7 @@ function Consult() {
                 'genre': genre,
                 'frequency': frequency
             }))
-            window.location.href = '/app/resultado'
+            window.location.href = '/resultado'
         }
     }
 

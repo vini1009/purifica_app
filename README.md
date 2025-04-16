@@ -1,6 +1,10 @@
 # 🥗 Purifica App
 
-[Imagem](/preview.png)
+<div ALIGN="center">
+  <img src="./preview.png" height="450">
+</div>
+
+---
 
 O **Purifica App** é uma aplicação web interativa focada em **nutrição personalizada**, oferecendo ao usuário recomendações diárias de calorias, macronutrientes (proteínas, carboidratos e gorduras), consumo ideal de água, além do cálculo de IMC (Índice de Massa Corporal). Com base nesses dados, o sistema também gera uma **receita personalizada** em formato PDF, de acordo com os objetivos e perfil do usuário.
 
